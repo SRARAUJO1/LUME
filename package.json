@@ -1,0 +1,1 @@
+{"dependencies":{"express":"^4.21.2"},"description":"Lume — app de gestão para restaurantes e lanchonetes de pequeno porte (cardápio, pedidos, salão, PDV, caixa, estoque, entregas, relatórios e permissões)","engines":{"node":">=22"},"license":"MIT","main":"server.js","name":"lume","scripts":{"start":"node server.js"},"version":"1.0.0"}

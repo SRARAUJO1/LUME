@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lume — Gestão para restaurantes</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div id="loginView" class="hidden">
+  <div style="max-width:420px;margin:80px auto;padding:0 16px">
+    <h1 class="logo">🔥 <span>LUME</span></h1>
+    <p style="color:var(--muted)">Gestão para restaurantes e lanchonetes</p>
+    <div class="card">
+      <label>Usuário</label><input id="loginUser" placeholder="ex.: dono">
+      <label>Senha</label><input id="loginPass" type="password" placeholder="••••••">
+      <p id="loginErr" class="err"></p>
+      <button class="primary" onclick="doLogin()" style="width:100%;margin-top:8px">Entrar</button>
+      <p style="color:var(--muted);font-size:13px">Primeiro acesso do dono: <b>dono / lume123</b> — troque a senha depois do primeiro login.</p>
+      <button onclick="openClient()" style="width:100%">Abrir área do cliente (sem login)</button>
+    </div>
+  </div>
+</div>
+
+<div id="appView" class="hidden">
+  <div class="topbar">
+    <div class="logo">🔥 <span>LUME</span></div>
+    <div style="flex:1"></div>
+    <button id="soundBtn" onclick="toggleSound()">🔊 Modo com som</button>
+    <button onclick="openClient()">Área do cliente</button>
+    <span id="whoami" style="color:var(--muted)"></span>
+    <button onclick="doLogout()">Sair</button>
+  </div>
+  <div class="layout">
+    <div class="sidebar" id="sidebar"></div>
+    <div class="main" id="main"></div>
+  </div>
+</div>
+
+<div id="clientView" class="hidden">
+  <div class="topbar"><div class="logo">🔥 <span>LUME</span></div><div style="flex:1"></div><span class="badge">Área do cliente</span></div>
+  <div style="max-width:900px;margin:0 auto;padding:20px" id="clientMain"></div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="popupRoot"></div>
+<audio id="notifAudio" src="/notification.mp3" preload="auto"></audio>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
